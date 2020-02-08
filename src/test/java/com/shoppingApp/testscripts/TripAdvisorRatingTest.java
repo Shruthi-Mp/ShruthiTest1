@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import com.shoppingApp.commonlib.WDCommonLib;
 import com.shoppingApp.genericlib.BaseClass;
 import com.shoppingApp.genericlib.FileLib;
+import com.shoppingApp.genericlib.Utility;
 import com.shoppingApp.objectRepository.Pomclasses.TripAdvisorClubMahindraPAge_Pom;
 import com.shoppingApp.objectRepository.Pomclasses.TripAdvisorHomePage_Pom;
 import com.shoppingApp.objectRepository.Pomclasses.TripAdvisorReviewPage_Pom;
@@ -34,6 +35,9 @@ public class TripAdvisorRatingTest extends BaseClass {
  		String name=f.fetchDatafromExcel("tripadvisor", 0, 0);
  		thp.sendkeystotripactualsearchbox(name);
  		List<WebElement> plist = thp.getplacelist();
+ 		
+ 		Utility.screenshot(BaseClass.driver);
+
 		plist.get(0).click();
 		Thread.sleep(3000);
 		JavascriptExecutor exe = (JavascriptExecutor)driver;
@@ -42,6 +46,9 @@ public class TripAdvisorRatingTest extends BaseClass {
 		tcmp.ClickonwriteReview();
 		Thread.sleep(2000);
 		lib.NavigatetoChildWindow();
+		
+		Utility.screenshot(BaseClass.driver);
+
 		//WebElement ele=trp.getrating();
 		//lib.explicitWait(ele);
 		//WebElement[] listofbubbles=trp.bubbleslist();

@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.shoppingApp.commonlib.WDCommonLib;
 import com.shoppingApp.genericlib.BaseClass;
 import com.shoppingApp.genericlib.FileLib;
+import com.shoppingApp.genericlib.Utility;
 import com.shoppingApp.objectRepository.Pomclasses.AmazonHomePage_Pom;
 import com.shoppingApp.objectRepository.Pomclasses.AmazonIphonePage_Pom;
 import com.shoppingApp.objectRepository.Pomclasses.FlipkartHomePage_Pom;
@@ -56,13 +57,18 @@ public class IphonePriceComparisonTest extends BaseClass
 		String fkprice=fip.fetchfpiphoneprice().replace("₹","").replaceAll(",", "");
 		int fprice=Integer.parseInt(fkprice); //number format exception if u don't replace spl chars
 		System.out.println(fkprice);
+	    Utility.screenshot(BaseClass.driver);
 		if(aprice<fprice)
 		{
 			System.out.println("amzon price is less and price is:"+aprice);
+			 Utility.screenshot(BaseClass.driver);
+
 		}
 		else
 		{
 			System.out.println("flipkart price is less and price is:"+fprice);
+			 Utility.screenshot(BaseClass.driver);
+
 		}
 		
 	}
