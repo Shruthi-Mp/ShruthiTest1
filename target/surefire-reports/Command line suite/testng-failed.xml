@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="com.shoppingApp.testscripts.TripAdvisorRatingTest">
+        <methods>
+          <include name="closeDB"/>
+          <include name="launchBrowser"/>
+          <include name="logout"/>
+          <include name="connectDB"/>
+          <include name="closeBrowser"/>
+          <include name="TripAdvisorRating"/>
+        </methods>
+      </class> <!-- com.shoppingApp.testscripts.TripAdvisorRatingTest -->
+      <class name="com.shoppingApp.testscripts.IphonePriceComparisonTest">
+        <methods>
+          <include name="closeDB"/>
+          <include name="iphonepricecomparision"/>
+          <include name="launchBrowser"/>
+          <include name="logout"/>
+          <include name="connectDB"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.shoppingApp.testscripts.IphonePriceComparisonTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->
