@@ -32,12 +32,18 @@ public class IphonePriceComparisonTest extends BaseClass
 		String name= f.fetchDatafromExcel("shoppingapp", 0, 0);
 		ahp.sendKeystoAmazonsearchbox(name);
 		ahp.Clickonamaznsearch();
+		
+		Utility.screenshot(BaseClass.driver);
+		
 		JavascriptExecutor exe = (JavascriptExecutor)driver;
 		exe.executeScript("window.scrollBy(0,1000)");
 		System.out.println("navigating to iphone page");
 		Thread.sleep(2000);
 		ahp.Clickonamaznselectiphone();
 		wlib.NavigatetoChildWindow();
+		
+		Utility.screenshot(BaseClass.driver);
+		
 		String amazonprice=aip.fetchamazoniphoneprice().replace("₹","").replaceAll(",", "");
 		int aprice=Integer.parseInt(amazonprice);
 		BaseClass.driver.get(f.fetchDataFromProperty("flipkart_url"));

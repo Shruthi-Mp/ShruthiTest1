@@ -1,10 +1,12 @@
 com\shoppingApp\objectRepository\Pomclasses\FlipkartHomePage_Pom.class
 com\shoppingApp\objectRepository\Pomclasses\AmazonIphonePage_Pom.class
-com\shoppingApp\objectRepository\Pomclasses\TripAdvisorClubMahindraPAge_Pom.class
 com\shoppingApp\objectRepository\Pomclasses\AmazonHomePage_Pom.class
 com\shoppingApp\objectRepository\Pomclasses\FlipkartIphonePage_Pom.class
-com\shoppingApp\commonlib\WDCommonLib.class
 com\shoppingApp\genericlib\BaseClass.class
 com\shoppingApp\genericlib\FileLib.class
 com\shoppingApp\objectRepository\Pomclasses\TripAdvisorHomePage_Pom.class
+com\shoppingApp\genericlib\Utility.class
 com\shoppingApp\objectRepository\Pomclasses\TripAdvisorReviewPage_Pom.class
+com\shoppingApp\objectRepository\Pomclasses\TripAdvisorClubMahindraPAge_Pom.class
+com\shoppingApp\commonlib\WDCommonLib.class
+com\shoppingApp\genericlib\extentreport.class
