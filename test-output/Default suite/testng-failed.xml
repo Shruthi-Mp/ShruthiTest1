@@ -13,6 +13,16 @@
           <include name="TripAdvisorRating"/>
         </methods>
       </class> <!-- com.shoppingApp.testscripts.TripAdvisorRatingTest -->
+      <class name="com.shoppingApp.testscripts.IphonePriceComparisonTest">
+        <methods>
+          <include name="closeDB"/>
+          <include name="iphonepricecomparision"/>
+          <include name="launchBrowser"/>
+          <include name="logout"/>
+          <include name="connectDB"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.shoppingApp.testscripts.IphonePriceComparisonTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,11 +1,18 @@
 package com.shoppingApp.genericlib;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.core.impl.Log4jLogEvent;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -23,10 +30,33 @@ public class BaseClass
 	public static WebDriver driver;
 	ExtentReports reports;
 	ExtentTest test;
+	
+	Connection connect;
+	Statement stat;
+	ResultSet results;
 	@BeforeSuite 
-	public void connectDB()
+	public void connectDB() throws ClassNotFoundException, SQLException
 	{
-		System.out.println("connecting to DB");
+		/*System.out.println("connecting to DB");
+		
+		//create driver class object
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		//create connection object
+		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306","rootsh","root");
+		
+		//create statement object
+		stat = connect.createStatement();
+		
+		//execute query
+		results = stat.executeQuery("Select * from Customers");
+		
+		//get values from database
+		while(results.next())
+		{
+			String res=results.getNString(1);
+			Reporter.log(res, true);
+		} */
 	}
 	@BeforeClass
 	public void launchBrowser() throws IOException
@@ -40,7 +70,7 @@ public class BaseClass
 		//driver.get(f.fetchDataFromProperty("amazon_url"));
 		//driver.get(f.fetchDataFromProperty("flipkart_url"));
 		System.out.println("launching browser");
-	}
+	} 
 	/*
 	 * @BeforeMethod 
 	 * public void Login() 
@@ -51,7 +81,7 @@ public class BaseClass
 	@AfterMethod
 	public void logout(ITestResult status) 
 	{
-		//System.out.println("logout done");
+		System.out.println("logout done");
 		reports= new ExtentReports("./reports/testy.html",false);
 		test=reports.startTest("generating reports..");
 		//int num= status.getStatus();
@@ -67,7 +97,7 @@ public class BaseClass
 			test.log(LogStatus.FAIL, test.addScreenCapture(store));
 		}
 		reports.flush();
-		reports.endTest(test);
+		reports.endTest(test); 
 	}
 	@AfterClass
 	public void closeBrowser()
@@ -77,9 +107,10 @@ public class BaseClass
 		System.out.println("browser is closed");
 	}
 	@AfterSuite
-	public void closeDB()
+	public void closeDB() throws SQLException
 	{
 		System.out.println("closing DB");
-	}
+		//connect.close();
+	} 
 	
 }
